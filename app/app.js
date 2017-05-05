@@ -6,13 +6,13 @@ $scope.list = [
     brand: "Brand-1",
     product: "Product-1",
     quantity: 2,
-    delivery: "10/12/15"
+    delivery: "10/12/2015"
   },
   {
     brand: "Brand-2",
     product: "Product-2",
     quantity: 1,
-    delivery: "19/12/15"
+    delivery: "19/12/2015"
   }
 ];
 
@@ -36,7 +36,6 @@ $scope.addItem = function(newItem){
     $scope.newItem = {};
     editing = false;
   }
-  console.log($scope.list);
 }
 
 $scope.editItem = function(item){

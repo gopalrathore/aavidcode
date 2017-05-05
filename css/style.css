@@ -139,12 +139,16 @@ position: relative;
   color: #fff;
 }
 
-.banner .scroll-down { color: #fff;}
+.navigation a:hover { color: #40405f; }
 
-.navigation a:hover { color: #fff; }
+.banner .scroll-down { color: #fff;}
 
 .logo a {
   font-size: 30px;
+  color: #fff;
+}
+
+.logo a:hover {
   color: #fff;
 }
 
@@ -183,6 +187,7 @@ table tr.ng-leave.ng-leave-active {
 
 form label {
   margin: 27px 0 5px 0;
+  color: rgb(64, 64, 95);
   display: inline-block;
 }
 
@@ -207,17 +212,25 @@ button[type="submit"] {
   background: rgb(76, 175, 80);
   color: #fff;
   padding: 10px;
+  transition: .4s
+}
+
+button[type="submit"]:hover {
+  border: 1px solid rgb(76, 175, 80);
+  background: #fff;
+  color: rgb(64, 64, 95);
 }
 
 .career {
   text-align: center;
-  background: url(../images/Careers.jpg) no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+background: #8AAFA8;
 }
+
+.career .scroll-down { color: rgb(64, 64, 95); }
 
 .career h2 {
   font-weight: 700;
+  color: #40405f;
   font-size: 50px;
   position: relative;
   margin-top: 50px;
@@ -267,7 +280,11 @@ button[type="submit"] {
 .edit:hover,
 .delete:hover { opacity: .7; }
 
-.apply { background: #8AAFA8; }
+.apply {
+  background: url(../images/Careers.jpg) no-repeat;
+background-size: cover;
+background-attachment: fixed;
+ }
 
 .apply table a {
   color: #4CAF50;
