@@ -173,6 +173,9 @@ form input {
   outline: none;
 }
 
+select,
+.chosen-container { display: block; }
+
 button[type="submit"] {
   width: 90%;
   margin-top: 27px;
