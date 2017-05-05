@@ -45,7 +45,6 @@ em { font-style: italic; }
 
 img {
   vertical-align: middle;
-
   border: 0;
 }
 
@@ -53,9 +52,7 @@ sub,
 sup {
   font-size: 55%;
   line-height: 0;
-
   position: relative;
-
   vertical-align: baseline;
 }
 
@@ -233,6 +230,7 @@ table tr.ng-leave.ng-leave-active {
   min-width: 25%;
   padding: 8px;
   border: 1px solid #ddd;
+  font-size: 14px;
 }
 
 .table tr:nth-child(even) {background-color: #f2f2f2; }
