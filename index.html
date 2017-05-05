@@ -4,22 +4,17 @@
   <title>Assignment</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- //<link rel="stylesheet" href="css/chosen.min.css"> -->
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
-  <!-- //<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  //<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  //<script src="app\lib\chosen.jquery.min.js" type="text/javascript"></script> -->
   <script src="app/lib/angular.min.js"></script>
-  <script src="app\lib\angular-animate.min.js"></script>
+  <script src="app/lib/angular-animate.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
-  <script src="app\lib\angular-chosen.min.js"></script>
+  <script src="app/lib/angular-chosen.min.js"></script>
   <script src="app/app.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.css" />
-  <link rel="stylesheet" type="text/css" href="app\lib\chosen-spinner.css" />
+  <link rel="stylesheet" type="text/css" href="app/lib/chosen-spinner.css" />
 </head>
 <body ng-app="appModule">
   <div class="container">
@@ -41,29 +36,28 @@
     <div id="delivery" class="delivery section">
       <div class="wrapper" ng-controller="appController">
         <div class="form">
-          <form ng-submit="addItem(newItem)">
-            <label for="brand">Brand</label>
+          <form name="inputForm" ng-submit="addItem(newItem)" novalidate>
+            <label for="brand">Brand*</label>
             <select
               ng-model="newItem.brand"
+              ng-required="true"
               chosen="directiveOptions"
               ng-options="value for value in brandAndProduct.brand">
               <option value=""></option>
             </select>
-            <!-- <select id="brand" ng-model="newItem.brand">
-              <option ng-repeat="brand in brandAndProduct.brand" value="{{brand}}">{{brand}}</option>
-            </select> -->
-            <label for="product">Product</label>
+            <label for="product">Product*</label>
             <select
               ng-model="newItem.product"
+              ng-required="true"
               chosen="directiveOptions"
               ng-options="value for value in brandAndProduct.product">
               <option value=""></option>
             </select>
-            <label for="quantity">Quantity</label>
+            <label for="quantity">Quantity*</label>
             <input id="quantity" type="number"placeholder="Enter Quantity You Want" ng-model="newItem.quantity" ng-required="true">
-            <label for="datepicker">Expected Delivery Date</label>
-            <input id="datepicker" type="text"placeholder="Expected Delivery Date" ng-model="newItem.delivery" ng-required="true">
-            <button type="submit">Save</button>
+            <label for="datepicker">Expected Delivery Date*</label>
+            <input id="datepicker" type="text"placeholder="Expected Delivery Date" ng-model="newItem.delivery" ng-required="true" readonly>
+            <button type="submit" ng-disabled="inputForm.$invalid">Save</button>
           </form>
         </div>
         <div class="data">
@@ -95,10 +89,8 @@
       <div class="wrapper">
         <h2 class="hideme">Career</h2>
         <p class="hideme">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type spe</p>
+        <a class="hideme apply-btn" href="#job">Apply</a>
       </div>
-      <div class="center">
-        <a class="scroll-down fa fa-long-arrow-down" href="#job" title="Scroll Down"></a>
-        </div>
     </div>
 
     <div id="job" class="apply section" ng-controller="jobController">

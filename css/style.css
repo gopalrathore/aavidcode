@@ -6,12 +6,12 @@ dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
 tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
 figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+  font: inherit;
+  font-size: 100%;
   margin: 0;
   padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
+  border: 0;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -25,35 +25,38 @@ html { overflow-y: scroll; }
 
 /* Align radios and text inputs with their label */
 
-input[type='radio'] { vertical-align: text-bottom; }
+input[type="radio"] { vertical-align: text-bottom; }
 
 /* Hand cursor on clickable input elements */
 label,
-input[type='button'],
-input[type='submit'],
+input[type="button"],
+input[type="submit"],
 button {
   cursor: pointer;
 }
 
 strong {
-  font-weight: bold;
   font-family: inherit;
   font-size: inherit;
+  font-weight: bold;
 }
 
 em { font-style: italic; }
 
 img {
-  border: 0;
   vertical-align: middle;
+
+  border: 0;
 }
 
 sub,
 sup {
-  vertical-align: baseline;
-  position: relative;
   font-size: 55%;
   line-height: 0;
+
+  position: relative;
+
+  vertical-align: baseline;
 }
 
 sup { top: -.7em; }
@@ -65,60 +68,45 @@ sub { bottom: -.25em; }
 
 .cf:before,
 .cf:after {
+  content: "";
   display: table;
-  content: " ";
 }
 
 .cf:after { clear: both; }
 
-.container { font-family: 'Open Sans', sans-serif; }
+.container { font-family: "Open Sans", sans-serif; }
+
 ul { list-style-type: none; }
 
 a {
-  text-decoration: none;
   transition: .4s;
+  text-decoration: none;
 }
 
 .section {
-   height: 100vh;
-position: relative;
- }
+  position: relative;
+  height: 100vh;
+}
 
 .wrapper {
-  padding: 50px 0;
   width: 85%;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 50px 0;
 }
 
 .banner {
-  text-align: center;
   position: relative;
+  text-align: center;
   background: url(../images/Careers.jpg) no-repeat;
   background-size: cover;
 }
 
-.center {
-  text-align: center;
-}
-
-.scroll-down {
-  position: absolute;
-  bottom: 10%;
-  font-size: 25px;
-  padding: 20px;
-  color: rgb(76, 175, 80);
-  animation: jump 1s infinite;
-}
-
-@keyframes jump {
-  to { transform: translateY(20px); }
-}
-
 .navigation {
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .navigation li {
@@ -126,168 +114,109 @@ position: relative;
   margin-left: 80px;
 }
 
-.navigation li:first-of-type {
-  margin-left: 0;
-}
+.navigation li:first-of-type { margin-left: 0; }
 
 .navigation a {
-  padding: 10px;
-  display: inline-block;
-  text-transform: capitalize;
   font-size: 14px;
   font-weight: 700;
+  display: inline-block;
+  padding: 10px;
+  text-transform: capitalize;
   color: #fff;
 }
 
 .navigation a:hover { color: #40405f; }
 
-.banner .scroll-down { color: #fff;}
+.banner .scroll-down { color: #fff; }
 
 .logo a {
   font-size: 30px;
   color: #fff;
 }
 
-.logo a:hover {
-  color: #fff;
+.logo a:hover { color: #fff; }
+
+.center { text-align: center; }
+
+.scroll-down {
+  font-size: 25px;
+  position: absolute;
+  bottom: 10%;
+  padding: 20px;
+  animation: jump 1s infinite;
+  color: rgb(76, 175, 80);
 }
 
-.form {
-  width: 25%;
+@keyframes jump {
+  to { transform: translateY(20px); }
 }
+
+.form { width: 25%; }
 
 .data {
-  width: 75%;
   overflow: hidden;
-}
-
-table td { max-width: 20%; }
-
-table tr.ng-enter {
-  transition: .5s linear all;
-  opacity: 0;
-  transform: translateX(-100%);
-}
-
-table tr.ng-enter.ng-enter-active {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-table tr.ng-leave {
-  transition: .5s linear all;
-  opacity: 1;
-  transform: translateX(0);
-}
-
-table tr.ng-leave.ng-leave-active {
-  opacity: 0;
-  transform: translateX(100%);
+  width: 75%;
 }
 
 form label {
+  display: inline-block;
   margin: 27px 0 5px 0;
   color: rgb(64, 64, 95);
-  display: inline-block;
 }
 
-form label:first-of-type {
-  margin-top: 0;
-}
+form label:first-of-type { margin-top: 0; }
 
 .chosen-container { width: 90% !important; }
 
 form input {
-  width: 90%;
   display: block;
-  outline: none;
-  padding: 10px;
   box-sizing: border-box;
+  width: 90%;
+  padding: 10px;
+  outline: none;
 }
 
 button[type="submit"] {
   width: 90%;
   margin-top: 27px;
+  padding: 10px;
+  transition: .4s;
+  color: #fff;
   border: none;
   background: rgb(76, 175, 80);
-  color: #fff;
-  padding: 10px;
-  transition: .4s
 }
 
 button[type="submit"]:hover {
+  color: rgb(64, 64, 95);
   border: 1px solid rgb(76, 175, 80);
   background: #fff;
-  color: rgb(64, 64, 95);
 }
 
-.career {
-  text-align: center;
-background: #8AAFA8;
+button[disabled="disabled"] {
+  opacity: .4;
+  cursor: not-allowed !important;
 }
 
-.career .scroll-down { color: rgb(64, 64, 95); }
-
-.career h2 {
-  font-weight: 700;
-  color: #40405f;
-  font-size: 50px;
-  position: relative;
-  margin-top: 50px;
+table tr.ng-enter {
+  transition: .5s linear all;
+  transform: translateX(-100%);
+  opacity: 0;
 }
 
-.career h2:after {
-  content: "";
-  position: absolute;
-  width: 12%;
-  bottom: 0;
-  left: 50%;
-  border: 1px solid rgb(76, 175, 80);
-  transform: translateX(-50%);
+table tr.ng-enter.ng-enter-active {
+  transform: translateX(0);
+  opacity: 1;
 }
 
-.career p {
-  font-weight: 400;
-  font-size: 25px;
-  margin-top: 50px;
+table tr.ng-leave {
+  transition: .5s linear all;
+  transform: translateX(0);
+  opacity: 1;
 }
 
-.delete {
-  background: red;
-  color: #fff;
-  padding: 5px;
-  border-radius: 5px;
-  display: inline-block;
-  font-size: 14px;
-  cursor: pointer;
-  width: 45%;
-  text-align: center;
-}
-
-.edit {
-  background: yellow;
-  width: 30%;
-  text-align: center;
-  margin-right: 15px;
-  color: #000;
-  padding: 5px;
-  border-radius: 5px;
-  display: inline-block;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.edit:hover,
-.delete:hover { opacity: .7; }
-
-.apply {
-  background: url(../images/Careers.jpg) no-repeat;
-background-size: cover;
-background-attachment: fixed;
- }
-
-.apply table a {
-  color: #4CAF50;
+table tr.ng-leave.ng-leave-active {
+  transform: translateX(100%);
+  opacity: 0;
 }
 
 .delivery .wrapper {
@@ -296,24 +225,109 @@ background-attachment: fixed;
 }
 
 .table {
-    border-collapse: collapse;
-    width: 100%;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 .table td, .table th {
-    border: 1px solid #ddd;
-    padding: 8px;
-    min-width: 25%;
+  min-width: 25%;
+  padding: 8px;
+  border: 1px solid #ddd;
 }
 
-.table tr:nth-child(even){background-color: #f2f2f2;}
+.table tr:nth-child(even) {background-color: #f2f2f2; }
 
 .table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #4CAF50;
-    color: white;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  color: white;
+  background-color: #4caf50;
+}
+
+.delete {
+  font-size: 14px;
+  display: inline-block;
+  width: 45%;
+  padding: 5px;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  background: red;
+}
+
+.edit {
+  font-size: 14px;
+  display: inline-block;
+  width: 30%;
+  margin-right: 15px;
+  padding: 5px;
+  cursor: pointer;
+  text-align: center;
+  color: #000;
+  border-radius: 5px;
+  background: yellow;
+}
+
+.edit:hover,
+.delete:hover { opacity: .7; }
+
+.career {
+  text-align: center;
+  background: #8aafa8;
+}
+
+.career .scroll-down { color: rgb(64, 64, 95); }
+
+.career h2 {
+  font-size: 50px;
+  font-weight: 700;
+  position: relative;
+  margin-top: 50px;
+  color: #40405f;
+}
+
+.career h2:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 12%;
+  transform: translateX(-50%);
+  border: 1px solid rgb(76, 175, 80);
+}
+
+.career p {
+  font-size: 17px;
+  font-weight: 400;
+  margin-top: 50px;
+  color: #40405f;
+}
+
+.apply {
+  background: url(../images/Careers.jpg) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.apply table a { color: #4caf50; }
+
+.apply-btn {
+  display: inline-block;
+  margin-top: 70px;
+  padding: 10px 65px;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #40405f;
+}
+
+.apply-btn:hover {
+  color: #40405f;
+  border: 1px solid #40405f;
+  background: #fff;
 }
 
 .hideme { opacity: 0; }

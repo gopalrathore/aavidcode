@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   /* Every time the window is scrolled ... */
   $(window).scroll( function(){
 
@@ -10,11 +11,12 @@ $(document).ready(function(){
 
       /* If the object is completely visible in the window, fade it it */
       if( bottom_of_window > bottom_of_object ){
-        $(this).animate({'opacity':'1'},500);
+        $(this).animate({'opacity':'1'},1000);
       }
     });
   });
 
+  // Smooth scroll down effect
   $('a[href^="#"]').on('click', function(event) {
     var target = $(this.getAttribute('href'));
     if( target.length ) {
@@ -25,6 +27,7 @@ $(document).ready(function(){
     }
   });
 
+// Chosen plugin settings
   var chosenOption = {
     width: "90%"
   }
@@ -32,8 +35,10 @@ $(document).ready(function(){
   $('#brand').chosen(chosenOption);
   $('#product').chosen(chosenOption);
 
+// Min Date and Max Date of datepicker
   $( "#datepicker" ).datepicker({
     minDate: '1D',
     maxDate: '+1M',
   });
+  
 });

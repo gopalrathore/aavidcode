@@ -56,6 +56,4 @@ appModule.controller('jobController', ['$scope', function($scope){
       url: "#FIXME"
     }
   ];
-
-  $scope.name= "gopal";
 }]);
