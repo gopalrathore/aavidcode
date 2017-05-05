@@ -1,0 +1,302 @@
+@charset "utf-8";
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html { overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em { font-style: italic; }
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup { top: -.7em; }
+
+sub { bottom: -.25em; }
+
+/* 1.2. Clear Fix
+========================================================================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after { clear: both; }
+
+.container { font-family: 'Open Sans', sans-serif; }
+ul { list-style-type: none; }
+
+a {
+  text-decoration: none;
+  transition: .4s;
+}
+
+.section {
+   height: 100vh;
+position: relative;
+ }
+
+.wrapper {
+  padding: 50px 0;
+  width: 85%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.banner {
+  text-align: center;
+  position: relative;
+  background: url(../images/Careers.jpg) no-repeat;
+  background-size: cover;
+}
+
+.center {
+  text-align: center;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 10%;
+  font-size: 25px;
+  padding: 20px;
+  color: rgb(76, 175, 80);
+  animation: jump 1s infinite;
+}
+
+@keyframes jump {
+  to { transform: translateY(20px); }
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation li {
+  height: 100%;
+  margin-left: 80px;
+}
+
+.navigation li:first-of-type {
+  margin-left: 0;
+}
+
+.navigation a {
+  padding: 10px;
+  display: inline-block;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.banner .scroll-down { color: #fff;}
+
+.navigation a:hover { color: #fff; }
+
+.logo a {
+  font-size: 30px;
+  color: #fff;
+}
+
+.form {
+  width: 25%;
+}
+
+.data {
+  width: 75%;
+  overflow: hidden;
+}
+
+table td { max-width: 20%; }
+
+table tr.ng-enter {
+  transition: .5s linear all;
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+table tr.ng-enter.ng-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+table tr.ng-leave {
+  transition: .5s linear all;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+table tr.ng-leave.ng-leave-active {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+form label {
+  margin: 27px 0 5px 0;
+  display: inline-block;
+}
+
+form label:first-of-type {
+  margin-top: 0;
+}
+
+.chosen-container { width: 90% !important; }
+
+form input {
+  width: 90%;
+  display: block;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  width: 90%;
+  margin-top: 27px;
+  border: none;
+  background: rgb(76, 175, 80);
+  color: #fff;
+  padding: 10px;
+}
+
+.career {
+  text-align: center;
+  background: url(../images/Careers.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.career h2 {
+  font-weight: 700;
+  font-size: 50px;
+  position: relative;
+  margin-top: 50px;
+}
+
+.career h2:after {
+  content: "";
+  position: absolute;
+  width: 12%;
+  bottom: 0;
+  left: 50%;
+  border: 1px solid rgb(76, 175, 80);
+  transform: translateX(-50%);
+}
+
+.career p {
+  font-weight: 400;
+  font-size: 25px;
+  margin-top: 50px;
+}
+
+.delete {
+  background: red;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  width: 45%;
+  text-align: center;
+}
+
+.edit {
+  background: yellow;
+  width: 30%;
+  text-align: center;
+  margin-right: 15px;
+  color: #000;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.edit:hover,
+.delete:hover { opacity: .7; }
+
+.apply { background: #8AAFA8; }
+
+.apply table a {
+  color: #4CAF50;
+}
+
+.delivery .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table td, .table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    min-width: 25%;
+}
+
+.table tr:nth-child(even){background-color: #f2f2f2;}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.hideme { opacity: 0; }
