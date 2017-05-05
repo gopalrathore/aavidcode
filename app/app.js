@@ -16,12 +16,12 @@ $scope.list = [
   }
 ];
 
+var editing = false;
+
 $scope.brandAndProduct = {
     brand: ["Brand-1", "Brand-2", "Brand-3", "Brand-4", "Brand-5"],
     product: ["product-1", "product-2","product-3", "product-4", "product-5"]
-  };
-
-console.log($scope.brandAndProduct.brand);
+};
 
 $scope.deleteItem = function(item){
   var index = $scope.list.indexOf(item);
@@ -29,14 +29,19 @@ $scope.deleteItem = function(item){
 }
 
 $scope.addItem = function(newItem){
-  console.log(newItem);
-  $scope.list.push(newItem);
-  $scope.newItem = {};
-  console.log($scope.newItem);
+  if(!editing){
+    $scope.list.push(newItem);
+    $scope.newItem = {};
+  }else {
+    $scope.newItem = {};
+    editing = false;
+  }
+  console.log($scope.list);
 }
 
 $scope.editItem = function(item){
   $scope.newItem = item;
+  editing = true;
 }
 
 }]);
