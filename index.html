@@ -2,24 +2,23 @@
 <html>
 <head>
   <title>Assignment</title>
-  
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.css" />
-  <link rel="stylesheet" type="text/css" href="app/lib/chosen-spinner.css" />
   <link rel="stylesheet" href="css/style.css">
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="app/lib/angular.min.js"></script>
   <script src="app/lib/angular-animate.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
   <script src="app/lib/angular-chosen.min.js"></script>
   <script src="app/app.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.css" />
+  <link rel="stylesheet" type="text/css" href="app/lib/chosen-spinner.css" />
 </head>
-<body ng-app="appModule">
-  <div class="container">
+<body>
+  <div class="container" ng-app="appModule">
+    <!--  Section 1 starts -->
     <div class="banner section">
       <nav>
         <ul class="navigation">
@@ -34,7 +33,9 @@
       </nav>
       <a class="scroll-down fa fa-long-arrow-down" href="#delivery" title="Scroll Down"></a>
     </div>
+    <!-- Section 1 ends -->
 
+    <!--  Section 2 starts -->
     <div id="delivery" class="delivery section">
       <div class="wrapper" ng-controller="appController">
         <div class="form">
@@ -86,7 +87,9 @@
         <a class="scroll-down fa fa-long-arrow-down" href="#career" title="Scroll Down"></a>
         </div>
     </div>
+    <!-- Section 2 ends -->
 
+    <!-- Section 3 starts -->
     <div id="career" class="career section">
       <div class="wrapper">
         <h2 class="hideme">Career</h2>
@@ -94,7 +97,9 @@
         <a class="hideme apply-btn" href="#job">Apply</a>
       </div>
     </div>
+    <!-- Section 3 ends -->
 
+    <!-- Section 4 starts -->
     <div id="job" class="apply section" ng-controller="jobController">
       <div class="wrapper">
         <table class="table">
@@ -117,6 +122,7 @@
         </table>
       </div>
     </div>
+    <!-- Section 4 ends -->
   </div>
   <script src="app\script.js"></script>
 </body>
